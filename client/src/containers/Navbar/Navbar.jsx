@@ -29,11 +29,11 @@ const Navbar = () => {
   const [isMobileMenuToggled, setIsMobileMenuToggled] = useState(false);
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  // const user = useSelector((state) => state.user);
-  const user = {
-    firstName: 'Meduna',
-    lastName: 'Femi'
-  }
+  const user = useSelector((state) => state.user);
+  // const user = {
+  //   firstName: 'Meduna',
+  //   lastName: 'Femi'
+  // }
   const isNonMobileScreens = useMediaQuery('(min-width: 1200px)');
 
   const theme = useTheme();
@@ -46,7 +46,8 @@ const Navbar = () => {
 
   // const
 
-  const fullName = `${user.firstName} ${user.lastName}`;
+  const fullName =
+    `${user?.firstName ? user.firstName : 'Test'} ${user?.lastName ? user.lastName : 'Name'}`;
 
   return (
     <FlexBetween padding='1rem 6%' backgroundColor={alt}>
@@ -93,9 +94,27 @@ const Navbar = () => {
                 <LightMode sx={{ color: dark, fontSize: '25px' }} />
               )}
           </IconButton>
-          <Message sx={{ fontSize: '25px' }} />
-          <Notifications sx={{ fontSize: '25px' }} />
-          <Help sx={{ fontSize: '25px' }} />
+          {/* MESSAGE ICON  */}
+          <Message sx={{
+            fontSize: '25px',
+            '$:hover': {
+              cursor: 'pointer'
+            }
+          }} />
+          {/* NOTIFICATIONS ICON  */}
+          <Notifications sx={{
+            fontSize: '25px',
+            '$:hover': {
+              cursor: 'pointer'
+            }
+          }} />
+          {/* HELP ICON  */}
+          <Help sx={{
+            fontSize: '25px',
+            '$:hover': {
+              cursor: 'pointer'
+            }
+          }} />
           <FormControl variant='standard' value={fullName}>
             <Select
               value={fullName}

@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
 
-import { Auth, Home, Navbar, Profile, Widget } from './containers';
+import { Auth, Home, Profile, Widget } from './containers';
 import { useMemo } from 'react';
 import { useSelector } from 'react-redux';
 import { CssBaseline, ThemeProvider } from '@mui/material';
@@ -18,7 +18,6 @@ const App = () => {
       <BrowserRouter>
         <ThemeProvider theme={theme}>
           <CssBaseline>
-            <Navbar/>
             <Routes>
               <Route path='/' element={<Auth />} />
               <Route path='/home' element={<Home />} />
