@@ -115,6 +115,7 @@ const Navbar = () => {
               cursor: 'pointer'
             }
           }} />
+          
           <FormControl variant='standard' value={fullName}>
             <Select
               value={fullName}
