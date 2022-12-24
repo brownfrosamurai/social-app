@@ -1,5 +1,4 @@
 import FlexBetween from "./FlexBetween";
+import Form from "./Form";
 
-export {
-  FlexBetween
-}
+export { FlexBetween, Form }

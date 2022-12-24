@@ -10,10 +10,6 @@ import morgan from 'morgan';
 import { register, PostController } from './models/index.js';
 import { verifyToken } from './middleware/index.js';
 
-import User from './models/User/user.model.js';
-import Post from './models/Post/post.model.js';
-import { users, posts } from './data/index.js'
-
 import {
   AuthRoutes,
   UserRoutes

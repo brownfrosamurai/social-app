@@ -9,6 +9,8 @@ import User from './user.model.js';
 
 export const register = async (req, res) => {
   try {
+    console.log(req.body)
+
     const {
       firstName,
       lastName,
@@ -19,7 +21,6 @@ export const register = async (req, res) => {
       location,
       occupation
     } = req.body;
-
     const salt = await bcrypt.genSalt();
     const passwordHash = await bcrypt.hash(password, salt);
 

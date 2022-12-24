@@ -1,6 +1,8 @@
 import React from 'react';
 import { Box, Typography, useTheme, useMediaQuery } from '@mui/material';
 
+import { Form } from '../../components';
+
 const Auth = () => {
   const theme = useTheme();
   const isNonMobileScreens = useMediaQuery('(min-width: 1200px)');
@@ -12,7 +14,7 @@ const Auth = () => {
         textAlign='center'
         p='1rem 6%'
       >
-        <Typography fontSize='32px' fontWeigth='bold' color='primary' >
+        <Typography fontSize='32px' fontWeight='bold' color='primary' >
           Social App
         </Typography>
 
@@ -24,9 +26,10 @@ const Auth = () => {
         borderRadius='1.5rem'
         backgroundColor={theme.palette.background.alt}
       >
-        <Typography variant='h5' fontWeight='500' sx={{mb: '1.5rem'}}>
+        <Typography variant='h5' fontWeight='500' sx={{ mb: '1.5rem' }} textAlign='center'>
           Welcome to social app
         </Typography>
+        <Form />
 
       </Box>
     </Box>
